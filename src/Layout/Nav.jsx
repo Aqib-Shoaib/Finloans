@@ -3,7 +3,7 @@ import Logo from "../Components/Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // styles
 const StyledNav = styled.nav`
@@ -11,6 +11,12 @@ const StyledNav = styled.nav`
   align-items: center;
   justify-content: space-evenly;
   padding: 1.5rem 1rem;
+  z-index: 999;
+  position: ${($props) => ($props.isSticky ? "fixed" : "")};
+  background: ${($props) =>
+    $props.isSticky ? "rgba(0,0,0,1)" : "transparent"};
+  top: ${({ isSticky }) => (isSticky ? 0 : "")};
+  width: 100%;
 
   & .link {
     font-weight: 500;
@@ -110,10 +116,23 @@ const Hoverable = styled.div`
 export default function Nav() {
   const [pagesHovered, setPagesHovered] = useState(false);
   const [blogsHovered, setBlogsHovered] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(function () {
+    const handleSticky = () => {
+      setIsSticky(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleSticky);
+
+    return () => {
+      window.removeEventListener("scroll", handleSticky);
+    };
+  }, []);
+
   return (
-    <StyledNav>
+    <StyledNav isSticky={isSticky}>
       <Logo />
 
       <div className='allLinks'>
