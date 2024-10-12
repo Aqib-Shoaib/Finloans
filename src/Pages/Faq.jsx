@@ -1,3 +1,9 @@
+import BannerCommon from "../Components/BannerCommon";
+
 export default function Faq() {
-  return <div>Faq</div>;
+  return (
+    <div>
+      <BannerCommon heading="FAQs" />
+    </div>
+  );
 }

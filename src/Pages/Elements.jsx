@@ -1,3 +1,9 @@
+import BannerCommon from "../Components/BannerCommon";
+
 export default function Elements() {
-  return <div>Elements</div>;
+  return (
+    <div>
+      <BannerCommon heading="Elements" />
+    </div>
+  );
 }

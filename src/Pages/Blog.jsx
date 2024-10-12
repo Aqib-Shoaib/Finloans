@@ -1,3 +1,9 @@
+import BannerCommon from "../Components/BannerCommon";
+
 export default function Blog() {
-  return <div>Blog</div>;
+  return (
+    <div>
+      <BannerCommon heading="Blog" />
+    </div>
+  );
 }

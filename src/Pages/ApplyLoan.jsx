@@ -1,3 +1,9 @@
+import BannerCommon from "../Components/BannerCommon";
+
 export default function ApplyLoan() {
-  return <div>ApplyLoan</div>;
+  return (
+    <div>
+      <BannerCommon heading="Apply Loan" />
+    </div>
+  );
 }
