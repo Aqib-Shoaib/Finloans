@@ -9,6 +9,6 @@ const Heading = styled.h2`
   color: #001d38;
 `;
 
-export default function Title({ children }) {
-  return <Heading>{children}</Heading>;
+export default function Title({ children, className = "" }) {
+  return <Heading className={className}>{children}</Heading>;
 }
