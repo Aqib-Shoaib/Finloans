@@ -5,8 +5,6 @@ import Title from "./Title";
 const StyledSection = styled.section`
   display: grid;
   grid-template-columns: 50% 50%;
-  padding: 2rem 0;
-  gap: 4rem;
 `;
 
 const Questions = styled.div`
