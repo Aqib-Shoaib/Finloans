@@ -31,6 +31,10 @@ const Div2 = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 2rem;
+
+  @media screen and (max-width: 762px) {
+    flex-direction: row-reverse;
+  }
 `;
 
 const StyledDiv = styled.div`
@@ -38,6 +42,10 @@ const StyledDiv = styled.div`
   align-items: center;
   justify-content: center;
   padding: 5rem;
+
+  @media screen and (max-width: 762px) {
+    flex-direction: column;
+  }
 `;
 
 export default function Reviews() {

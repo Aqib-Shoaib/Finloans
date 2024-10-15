@@ -25,6 +25,11 @@ const Flex2 = styled.section`
   align-items: center;
   width: 100%;
   justify-content: space-evenly;
+
+  @media screen and (max-width: 762px) {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
 `;
 
 export default function OfferSection() {

@@ -5,6 +5,10 @@ import Title from "./Title";
 const StyledSection = styled.section`
   display: grid;
   grid-template-columns: 50% 50%;
+
+  @media screen and (max-width: 762px) {
+    grid-template-columns: auto;
+  }
 `;
 
 const Questions = styled.div`
@@ -15,6 +19,10 @@ const Questions = styled.div`
 
   & .head {
     padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 762px) {
+    padding-left: 3rem;
   }
 `;
 const Img = styled.img`

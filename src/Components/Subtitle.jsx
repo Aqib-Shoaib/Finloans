@@ -7,6 +7,7 @@ const H3 = styled.h3`
   font-size: 1.6rem;
   line-height: 1.75;
   color: #7a838b;
+  text-align: center;
 `;
 
 export default function Subtitle({ children }) {

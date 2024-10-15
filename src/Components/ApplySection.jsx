@@ -10,6 +10,11 @@ const StyledSection = styled.section`
   justify-content: space-between;
   gap: 5rem;
   height: 50vh;
+
+  @media screen and (max-width: 762px) {
+    padding: 1.25rem;
+    gap: 2rem;
+  }
 `;
 
 const Text = styled.h4`
@@ -18,6 +23,10 @@ const Text = styled.h4`
   line-height: 1.2;
   color: #fff;
   width: 70%;
+
+  @media screen and (max-width: 762px) {
+    font-size: 3rem;
+  }
 `;
 
 export default function ApplySection() {

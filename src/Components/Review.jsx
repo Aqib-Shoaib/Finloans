@@ -43,6 +43,11 @@ const StyledReview = styled.div`
   justify-content: center;
   gap: 2rem;
   padding: 1rem 3rem;
+
+  @media screen and (max-width: 762px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
 `;
 
 export default function Review({ author }) {

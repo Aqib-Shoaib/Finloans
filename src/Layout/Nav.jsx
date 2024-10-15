@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../Components/Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faPhone, faXmark } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 
@@ -50,6 +50,61 @@ const StyledNav = styled.nav`
     min-width: 60%;
     padding: 0.2rem 2rem;
   }
+
+  & .bars {
+    color: #fff;
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 1.53;
+    cursor: pointer;
+    display: none;
+  }
+
+  & .xmark {
+    color: #000;
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 1.53;
+    display: none;
+    cursor: pointer;
+  }
+
+  & .showlinks {
+    display: none;
+  }
+
+  @media screen and (max-width: 762px) {
+    flex-direction: column;
+    & .allLinks {
+      display: none;
+    }
+
+    & .show {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      background: #c04000;
+      justify-content: space-evenly;
+      padding: 0.2rem 2rem;
+      height: 100vh;
+    }
+
+    & .link {
+      padding: 1rem;
+    }
+    & .link:hover {
+      background: #33d4d6;
+      color: #fff;
+      border-radius: 0.5rem;
+    }
+    & .bars {
+      display: block;
+    }
+    & .xmark {
+      display: block;
+    }
+  }
 `;
 
 const Number = styled.div`
@@ -88,6 +143,10 @@ const Box = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+
+  @media screen and (max-width: 762px) {
+    display: none;
+  }
 `;
 
 const Hoverable = styled.div`
@@ -113,9 +172,21 @@ const Hoverable = styled.div`
   }
 `;
 
+const Small = styled.div`
+  display: block;
+
+  @media screen and (max-width: 762px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+`;
+
 export default function Nav() {
   const [pagesHovered, setPagesHovered] = useState(false);
   const [blogsHovered, setBlogsHovered] = useState(false);
+  const [showLinks, setShowLinks] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const navigate = useNavigate();
 
@@ -133,63 +204,78 @@ export default function Nav() {
 
   return (
     <StyledNav isSticky={isSticky}>
-      <Logo />
-
-      <div className='allLinks'>
-        <NavLink to='/' className='link'>
+      <Small>
+        <Logo />
+        {!showLinks && (
+          <FontAwesomeIcon
+            onClick={() => setShowLinks(true)}
+            className="bars"
+            icon={faBars}
+          />
+        )}
+        {showLinks && (
+          <FontAwesomeIcon
+            onClick={() => setShowLinks(false)}
+            className="xmark"
+            icon={faXmark}
+          />
+        )}
+      </Small>
+      <div className={`allLinks ${showLinks && "show"} `}>
+        <NavLink to="/" className="link">
           Home
         </NavLink>
-        <NavLink to='/about' className='link'>
+        <NavLink to="/about" className="link">
           About
         </NavLink>
-        <NavLink to='/loans' className='link'>
+        <NavLink to="/loans" className="link">
           Loans
         </NavLink>
         <Hoverable>
-          <span className='link' onMouseEnter={() => setPagesHovered(true)}>
+          <span className="link" onMouseEnter={() => setPagesHovered(true)}>
             Pages
           </span>
           <div
             className={pagesHovered ? "showlinks" : "hide"}
             onMouseLeave={() => setPagesHovered(false)}
           >
-            <NavLink to='/apply-loan' className='hoverLink'>
+            <NavLink to="/apply-loan" className="hoverLink">
               Apply Loan
             </NavLink>
-            <NavLink to='/elements' className='hoverLink'>
+            <NavLink to="/elements" className="hoverLink">
               Elements
             </NavLink>
           </div>
         </Hoverable>
         <Hoverable>
-          <span className='link' onMouseEnter={() => setBlogsHovered(true)}>
+          <span className="link" onMouseEnter={() => setBlogsHovered(true)}>
             Blogs
           </span>
           <div
             className={blogsHovered ? "showlinks" : "hide"}
             onMouseLeave={() => setBlogsHovered(false)}
           >
-            <NavLink to='/blog' className='hoverLink'>
+            <NavLink to="/blog" className="hoverLink">
               Blog
             </NavLink>
-            <NavLink to='/single-blog' className='hoverLink'>
+            <NavLink to="/single-blog" className="hoverLink">
               Single Blog
             </NavLink>
           </div>
         </Hoverable>
-        <NavLink to='/faq' className='link'>
+        <NavLink to="/faq" className="link">
           Faq
         </NavLink>
-        <NavLink to='/contact' className='link'>
+        <NavLink to="/contact" className="link">
           Contact
         </NavLink>
       </div>
       <Box>
         <Number>
-          <span className='icon'>
+          <span className="icon">
             <FontAwesomeIcon icon={faPhone} />
           </span>
-          <span className='num'>+92 304 6164841</span>
+          <span className="num">+92 304 6164841</span>
         </Number>
 
         <CallBtn onClick={() => navigate("/apply-loan")}>

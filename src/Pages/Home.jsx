@@ -9,7 +9,7 @@ import WorkSection from "../Components/WorkSection";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <BannerHome />
       <OfferSection />
       <ChooseSection />
@@ -18,6 +18,6 @@ export default function Home() {
       <Reviews />
       <Logos />
       <ApplySection />
-    </div>
+    </>
   );
 }

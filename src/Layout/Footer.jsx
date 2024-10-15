@@ -13,6 +13,11 @@ const StyledFooter = styled.footer`
   padding: 10rem;
   background: #fff;
   position: relative;
+
+  @media screen and (max-width: 762px) {
+    padding: 3rem;
+    height: 150vh;
+  }
 `;
 
 const Info = styled.span`
@@ -58,6 +63,10 @@ const InfoBox = styled.div`
 const Main = styled.main`
   display: flex;
   gap: 3rem;
+
+  @media screen and (max-width: 762px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const CopyRight = styled.p`
@@ -91,6 +100,13 @@ const Sect = styled.section`
   grid-template-columns: 25% 25% auto;
   padding: 0 3rem;
   margin-left: 15rem;
+
+  @media screen and (max-width: 762px) {
+    padding: 1rem;
+    grid-template-columns: auto;
+    margin-left: 1rem;
+    gap: 1rem;
+  }
 `;
 
 const Form = styled.form`
@@ -121,6 +137,11 @@ const Form = styled.form`
     border: none;
     border-radius: 10px;
   }
+
+  @media screen and (max-width: 762px) {
+    margin: 0.5rem;
+    gap: 0.5rem;
+  }
 `;
 
 export default function Footer() {
@@ -128,16 +149,16 @@ export default function Footer() {
     <StyledFooter>
       <Main>
         <InfoBox>
-          <img src='/footer_logo.png' alt='footer logo' />
+          <img src="/footer_logo.png" alt="footer logo" />
           <Info>aqibibnamjid@gmail.com</Info>
           <Info>+92 304 6164841</Info>
           <Info>Islamabad, UET Taxila</Info>
 
           <Icons>
-            <FontAwesomeIcon className='icon' icon={faFacebook} />
-            <FontAwesomeIcon className='icon' icon={faGoogle} />
-            <FontAwesomeIcon className='icon' icon={faLinkedin} />
-            <FontAwesomeIcon icon={faTwitter} className='icon' />
+            <FontAwesomeIcon className="icon" icon={faFacebook} />
+            <FontAwesomeIcon className="icon" icon={faGoogle} />
+            <FontAwesomeIcon className="icon" icon={faLinkedin} />
+            <FontAwesomeIcon icon={faTwitter} className="icon" />
           </Icons>
         </InfoBox>
 
@@ -162,15 +183,15 @@ export default function Footer() {
           </InfoBox>
           <InfoBox>
             <FooterTitle>Subscribe</FooterTitle>
-            <Form action=''>
+            <Form action="">
               <input
-                type='email'
-                name=''
-                id=''
-                placeholder='Enter your Email'
-                className='input'
+                type="email"
+                name=""
+                id=""
+                placeholder="Enter your Email"
+                className="input"
               />
-              <button className='btn'>Subscribe</button>
+              <button className="btn">Subscribe</button>
             </Form>
             <Items>
               Esteem spirit temper too say adieus who direct esteem esteems

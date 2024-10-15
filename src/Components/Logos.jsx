@@ -6,6 +6,12 @@ const StyledLogos = styled.div`
   justify-content: center;
   gap: 2.5rem;
   padding: 5rem;
+
+  @media screen and (max-width: 762px) {
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 0;
+  }
 `;
 
 export default function Logos() {

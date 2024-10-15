@@ -10,6 +10,10 @@ const StyledSection = styled.section`
   gap: 10rem;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 762px) {
+    flex-direction: column;
+  }
 `;
 
 const Main = styled.main`

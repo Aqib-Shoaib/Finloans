@@ -12,6 +12,10 @@ const StyledApplyForm = styled.section`
   flex-direction: column;
   border: 1px solid #aaa;
   margin: 10rem 25rem;
+
+  @media screen and (max-width: 762px) {
+    margin: 4rem 1rem;
+  }
 `;
 
 const Form = styled.form`

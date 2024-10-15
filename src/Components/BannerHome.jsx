@@ -9,6 +9,9 @@ const Banner = styled.section`
   height: 150vh;
   background-position: center;
   background-size: cover;
+  @media screen and (max-width: 762px) {
+    height: fit-content;
+  }
 `;
 
 const Flex = styled.div`
@@ -17,6 +20,11 @@ const Flex = styled.div`
   place-items: center;
   gap: 2rem;
   padding: 5rem;
+
+  @media screen and (max-width: 762px) {
+    grid-template-columns: auto;
+    padding: 1rem;
+  }
 `;
 
 export default function BannerHome() {

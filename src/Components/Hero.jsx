@@ -7,6 +7,10 @@ const HeroText = styled.h1`
   line-height: 1.3;
   color: #fff;
   margin: 1rem;
+
+  @media screen and (max-width: 762px) {
+    font-size: 3rem;
+  }
 `;
 const HeroBtn = styled.button`
   border: none;
@@ -27,6 +31,10 @@ const HeroBtn = styled.button`
 `;
 const StyledHero = styled.div`
   padding: 5rem;
+
+  @media screen and (max-width) {
+    padding: 1.5rem;
+  }
 `;
 
 export default function Hero() {

@@ -8,6 +8,10 @@ const WorkItems = styled.section`
   align-items: center;
   justify-content: center;
   gap: 2rem;
+
+  @media screen and (max-width: 762px) {
+    flex-direction: column;
+  }
 `;
 
 const Main = styled.div`

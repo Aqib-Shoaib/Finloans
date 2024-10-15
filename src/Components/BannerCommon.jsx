@@ -8,6 +8,10 @@ const Banner = styled.section`
   height: 70vh;
   background-position: center;
   background-size: cover;
+
+  @media screen and (max-width: 762px) {
+    height: 100vh;
+  }
 `;
 
 const H1 = styled.h1`
